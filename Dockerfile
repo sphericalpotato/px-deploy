@@ -1,4 +1,4 @@
-FROM fedora:35-x86_64
+FROM registry.fedoraproject.org/fedora:35-x86_64
 ENV CLOUDSDK_PYTHON="/usr/bin/python2.7"
 
 RUN dnf install -y dnf-plugins-core && \
