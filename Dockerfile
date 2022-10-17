@@ -4,8 +4,8 @@ ENV CLOUDSDK_PYTHON="/usr/bin/python2.7"
 RUN dnf install -y dnf-plugins-core && \
     dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo && \
     dnf update -y  && \
-    dnf install -y gcc make openssh-clients python3-pip golang git azure-cli which openssl \
-                   gcc-c++ jq terraform vagrant-2.2.19-1 packer python2 libxcrypt-compat awscli && \
+    dnf install -y openssh-clients golang git azure-cli openssl \
+                   jq terraform vagrant-2.2.19-1 packer python2 awscli && \
     yum clean all && \
     echo ServerAliveInterval 300 >/etc/ssh/ssh_config && \
     echo ServerAliveCountMax 2 >>/etc/ssh/ssh_config && \
@@ -14,7 +14,7 @@ RUN dnf install -y dnf-plugins-core && \
     tar xzf google-cloud-sdk-338.0.0-linux-x86_64.tar.gz && \
     rm google-cloud-sdk-338.0.0-linux-x86_64.tar.gz && \
     ln -s /google-cloud-sdk/bin/gcloud /usr/bin/gcloud && \
-    gcloud components install alpha -q&& \
+    gcloud components install alpha -q && \
     vagrant plugin install vagrant-aws vagrant-azure && \
     vagrant plugin install vagrant-google --plugin-version 2.5.0 && \
     vagrant plugin install vagrant-vsphere --plugin-version 1.13.5 && \
