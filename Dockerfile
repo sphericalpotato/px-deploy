@@ -4,8 +4,8 @@ ENV CLOUDSDK_PYTHON="/usr/bin/python2.7"
 RUN dnf install -y dnf-plugins-core && \
     dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo && \
     dnf update -y  && \
-    dnf install -y openssh-clients make golang git azure-cli openssl \
-                   jq terraform vagrant-2.2.19-1 packer python2 awscli && \
+    dnf install -y openssh-clients openssl make golang git azure-cli awscli make \
+                   jq terraform vagrant-2.2.19-1 packer python2 gcc gcc-c++ && \
     yum clean all && \
     echo ServerAliveInterval 300 >/etc/ssh/ssh_config && \
     echo ServerAliveCountMax 2 >>/etc/ssh/ssh_config && \
