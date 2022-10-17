@@ -9,7 +9,7 @@ RUN dnf install -y dnf-plugins-core && \
 
 RUN echo ServerAliveInterval 300 >/etc/ssh/ssh_config && \
     echo ServerAliveCountMax 2 >>/etc/ssh/ssh_config && \
-    echo TCPKeepAlive yes >>/etc/ssh/ssh_config && \
+    echo TCPKeepAlive yes >>/etc/ssh/ssh_config
 
 RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-338.0.0-linux-x86_64.tar.gz && \
     tar xzf google-cloud-sdk-338.0.0-linux-x86_64.tar.gz && \
